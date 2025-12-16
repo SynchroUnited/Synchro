@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Synchro</title>
+  <meta name="description" content="Synchro — l’unité fait la valeur. Une participation par jour. Fenêtres de 30s. Burn si personne." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="logo">⟡</div>
+        <div>
+          <div class="name">Synchro</div>
+          <div class="tagline">L’unité fait la valeur.</div>
+        </div>
+      </div>
+
+      <div class="status">
+        <div class="pill" id="networkPill">Réseau : —</div>
+        <div class="pill" id="phasePill">Phase : NOT STARTED</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Une participation par jour. Un moment à choisir.</h1>
+      <p class="lead">
+        Synchro distribue une quantité fixe de tokens par fenêtre de 30 secondes.  
+        Si personne ne participe, la distribution est brûlée.
+      </p>
+
+      <div class="card grid">
+        <div class="stat">
+          <div class="label">Fenêtre en cours</div>
+          <div class="value" id="windowLabel">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">Temps restant</div>
+          <div class="value" id="countdown">—</div>
+        </div>
+        <div class="stat">
+          <div class="label">Fenêtre spéciale</div>
+          <div class="value" id="specialIn">—</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="connectBtn" class="btn secondary">Connecter le wallet</button>
+        <button id="participateBtn" class="btn" disabled>Participer (désactivé)</button>
+      </div>
+
+      <p class="hint" id="hint">
+        Le système n’a pas encore démarré. Le bouton sera activé au lancement officiel (T0).
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Règles</h2>
+      <ul>
+        <li><strong>Périodes :</strong> 30 secondes, basées sur le temps blockchain.</li>
+        <li><strong>Distribution normale :</strong> 1 Synchro partagée équitablement entre les participants de la période.</li>
+        <li><strong>Burn :</strong> si personne ne participe, la Synchro est brûlée définitivement.</li>
+        <li><strong>Participation :</strong> 1 participation par jour et par wallet (gain ou perte = consommée).</li>
+        <li><strong>Fenêtre spéciale :</strong> la dernière fenêtre de chaque heure (HH:59:30 → HH:00:00), loterie de <strong>2 Synchro</strong>. Si personne ne participe : burn.</li>
+        <li><strong>Gas :</strong> payé par l’utilisateur via son wallet. Aucun frais caché.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Fairness & Limits</h2>
+      <p>
+        Synchro est sans KYC : le multi-wallet est techniquement possible. Le système ne cherche pas à l’éliminer,
+        mais à en limiter l’impact (1/jour/wallet, plafonds temporels, burn, loterie limitée).
+      </p>
+      <p class="small">
+        Synchro n’est pas une promesse de gain. C’est une expérience de coordination dans un système rare et fini.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div class="small">© <span id="year"></span> Synchro — Prototype UI (sans contrat branché)</div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
